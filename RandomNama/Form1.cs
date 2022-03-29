@@ -13,7 +13,8 @@ namespace RandomNama
 {
     public partial class RandomNama : Form
     {
-       
+
+        public MySqlConnection conn;
 
         MySqlConnection sqlConnect;
         MySqlCommand sqlCommand;
@@ -37,20 +38,60 @@ namespace RandomNama
 
             int index = rand.Next(NamaDepan.Length);
             
-
+            // Random Nama
             int index2 = rand.Next(LastName.Length);
             labelNama.Text = (NamaDepan[index] + " " + LastName[index2]);
 
-
-            DataTable dtNama = new DataTable();
+            //CustID
 
             string hurufawal;
-            hurufawal = labelNama.Text.Substring(0,1);
+            hurufawal = labelNama.Text.Substring(0, 1);
 
-            labelCustID.Text = hurufawal;
+            sqlConnect = new MySqlConnection(connectString);
+            DataTable dtNama = new DataTable();
+            sqlQuery = "select * from customer where Customer_ID = 'C"+hurufawal+"' ";
+            sqlCommand = new MySqlCommand(sqlQuery,sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtNama);
 
+            int urutan;
+            urutan = dtNama.Rows.Count + 1;
+
+            string nextstepurutan = "";
+
+            if(urutan < 10)
+            {
+                nextstepurutan = "0000";
+                nextstepurutan += urutan.ToString();
+            }
+            else if (urutan >=10 && urutan < 100)
+            {
+                nextstepurutan = "000";
+                nextstepurutan += urutan.ToString();
+            }
+            else if (urutan >=100 && urutan < 1000)
+            {
+                nextstepurutan = "00";
+                nextstepurutan += urutan.ToString();
+            }
+            else if (urutan >= 1000 && urutan < 10000)
+            {
+                nextstepurutan = "0";
+                nextstepurutan += urutan.ToString();
+            }
+            else
+            {
+                nextstepurutan = "";
+                nextstepurutan += urutan.ToString();
+            }
+
+            labelCustID.Text = "C" + hurufawal + nextstepurutan;
+
+            //Alamat Random
             int index3 = rand.Next(Address.Length);
             labelAdress.Text = Address[index3];
+
+
 
         }
     }
