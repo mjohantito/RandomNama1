@@ -35,6 +35,7 @@ namespace RandomNama
             this.labelCustID = new System.Windows.Forms.Label();
             this.labelAdress = new System.Windows.Forms.Label();
             this.buttonInsert = new System.Windows.Forms.Button();
+            this.labelphone = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNama)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,11 +94,21 @@ namespace RandomNama
             this.buttonInsert.UseVisualStyleBackColor = true;
             this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
+            // labelphone
+            // 
+            this.labelphone.AutoSize = true;
+            this.labelphone.Location = new System.Drawing.Point(427, 68);
+            this.labelphone.Name = "labelphone";
+            this.labelphone.Size = new System.Drawing.Size(38, 13);
+            this.labelphone.TabIndex = 6;
+            this.labelphone.Text = "Phone";
+            // 
             // RandomNama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelphone);
             this.Controls.Add(this.buttonInsert);
             this.Controls.Add(this.labelAdress);
             this.Controls.Add(this.labelCustID);
@@ -120,6 +131,7 @@ namespace RandomNama
         private System.Windows.Forms.Label labelCustID;
         private System.Windows.Forms.Label labelAdress;
         private System.Windows.Forms.Button buttonInsert;
+        private System.Windows.Forms.Label labelphone;
     }
 }
 

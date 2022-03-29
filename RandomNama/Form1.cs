@@ -91,13 +91,26 @@ namespace RandomNama
             int index3 = rand.Next(Address.Length);
             labelAdress.Text = Address[index3];
 
-            sqlQuery = "insert into customer values";
 
+            //random no telp
+            int index4 = rand.Next(100000000, 999999999);
+            int index5 = rand.Next(1, 9);
+
+            string nohp = "08" + index5.ToString() + index4.ToString();
+            labelphone.Text = nohp;
+
+            
         }
 
         private void buttonInsert_Click(object sender, EventArgs e)
         {
-            
+            sqlQuery = "insert into customer values ('"+labelCustID.Text+"','"+labelNama.Text+"','"+labelAdress.Text+"','"+labelphone.Text+"')";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlConnect.Open();
+            sqlCommand.ExecuteNonQuery();
+            sqlConnect.Close();
+            MessageBox.Show("Data berhasil masuk!");
+            this.Close();
         }
     }
 }
