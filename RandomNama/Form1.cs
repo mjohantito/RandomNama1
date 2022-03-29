@@ -14,7 +14,7 @@ namespace RandomNama
     public partial class RandomNama : Form
     {
 
-        public MySqlConnection conn;
+        
 
         MySqlConnection sqlConnect;
         MySqlCommand sqlCommand;
@@ -91,8 +91,13 @@ namespace RandomNama
             int index3 = rand.Next(Address.Length);
             labelAdress.Text = Address[index3];
 
+            sqlQuery = "insert into customer values";
 
+        }
 
+        private void buttonInsert_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

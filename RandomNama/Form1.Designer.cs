@@ -34,6 +34,7 @@ namespace RandomNama
             this.labelNama = new System.Windows.Forms.Label();
             this.labelCustID = new System.Windows.Forms.Label();
             this.labelAdress = new System.Windows.Forms.Label();
+            this.buttonInsert = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNama)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,11 +83,22 @@ namespace RandomNama
             this.labelAdress.TabIndex = 4;
             this.labelAdress.Text = "label1";
             // 
+            // buttonInsert
+            // 
+            this.buttonInsert.Location = new System.Drawing.Point(583, 77);
+            this.buttonInsert.Name = "buttonInsert";
+            this.buttonInsert.Size = new System.Drawing.Size(75, 23);
+            this.buttonInsert.TabIndex = 5;
+            this.buttonInsert.Text = "Insert";
+            this.buttonInsert.UseVisualStyleBackColor = true;
+            this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
+            // 
             // RandomNama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonInsert);
             this.Controls.Add(this.labelAdress);
             this.Controls.Add(this.labelCustID);
             this.Controls.Add(this.labelNama);
@@ -107,6 +119,7 @@ namespace RandomNama
         private System.Windows.Forms.Label labelNama;
         private System.Windows.Forms.Label labelCustID;
         private System.Windows.Forms.Label labelAdress;
+        private System.Windows.Forms.Button buttonInsert;
     }
 }
 
