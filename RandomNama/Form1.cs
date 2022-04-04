@@ -110,7 +110,7 @@ namespace RandomNama
             sqlConnect.Open();
             sqlCommand.ExecuteNonQuery();
             sqlConnect.Close();
-            //MessageBox.Show("Data berhasil masuk!");
+            MessageBox.Show("Data berhasil masuk!");
         }
 
         private void buttonLoop_Click(object sender, EventArgs e)
