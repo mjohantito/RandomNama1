@@ -49,13 +49,14 @@ namespace RandomNama
 
             sqlConnect = new MySqlConnection(connectString);
             DataTable dtNama = new DataTable();
-            sqlQuery = "select * from customer where Customer_ID = 'C"+hurufawal+"' ";
+            sqlQuery = "select * from customer where substring(`Customer_ID`,1,2) = 'C" + hurufawal+"' ";
             sqlCommand = new MySqlCommand(sqlQuery,sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtNama);
 
             int urutan;
             urutan = dtNama.Rows.Count + 1;
+            //MessageBox.Show(urutan.ToString());
 
             string nextstepurutan = "";
 
@@ -109,8 +110,18 @@ namespace RandomNama
             sqlConnect.Open();
             sqlCommand.ExecuteNonQuery();
             sqlConnect.Close();
-            MessageBox.Show("Data berhasil masuk!");
-            this.Close();
+            //MessageBox.Show("Data berhasil masuk!");
+        }
+
+        private void buttonLoop_Click(object sender, EventArgs e)
+        {
+            
+
+            for(int i = 0; i <= Convert.ToInt32(textBoxUlangBrp.Text); i++)
+            {
+                Random.PerformClick();
+                buttonInsert.PerformClick();
+            }
         }
     }
 }

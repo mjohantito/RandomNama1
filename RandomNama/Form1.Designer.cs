@@ -30,13 +30,13 @@ namespace RandomNama
         private void InitializeComponent()
         {
             this.Random = new System.Windows.Forms.Button();
-            this.dgvNama = new System.Windows.Forms.DataGridView();
             this.labelNama = new System.Windows.Forms.Label();
             this.labelCustID = new System.Windows.Forms.Label();
             this.labelAdress = new System.Windows.Forms.Label();
             this.buttonInsert = new System.Windows.Forms.Button();
             this.labelphone = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNama)).BeginInit();
+            this.buttonLoop = new System.Windows.Forms.Button();
+            this.textBoxUlangBrp = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Random
@@ -48,14 +48,6 @@ namespace RandomNama
             this.Random.Text = "Random";
             this.Random.UseVisualStyleBackColor = true;
             this.Random.Click += new System.EventHandler(this.Random_Click);
-            // 
-            // dgvNama
-            // 
-            this.dgvNama.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNama.Location = new System.Drawing.Point(85, 156);
-            this.dgvNama.Name = "dgvNama";
-            this.dgvNama.Size = new System.Drawing.Size(546, 258);
-            this.dgvNama.TabIndex = 1;
             // 
             // labelNama
             // 
@@ -103,21 +95,38 @@ namespace RandomNama
             this.labelphone.TabIndex = 6;
             this.labelphone.Text = "Phone";
             // 
+            // buttonLoop
+            // 
+            this.buttonLoop.Location = new System.Drawing.Point(126, 300);
+            this.buttonLoop.Name = "buttonLoop";
+            this.buttonLoop.Size = new System.Drawing.Size(75, 23);
+            this.buttonLoop.TabIndex = 7;
+            this.buttonLoop.Text = "Loop";
+            this.buttonLoop.UseVisualStyleBackColor = true;
+            this.buttonLoop.Click += new System.EventHandler(this.buttonLoop_Click);
+            // 
+            // textBoxUlangBrp
+            // 
+            this.textBoxUlangBrp.Location = new System.Drawing.Point(114, 251);
+            this.textBoxUlangBrp.Name = "textBoxUlangBrp";
+            this.textBoxUlangBrp.Size = new System.Drawing.Size(100, 20);
+            this.textBoxUlangBrp.TabIndex = 8;
+            // 
             // RandomNama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxUlangBrp);
+            this.Controls.Add(this.buttonLoop);
             this.Controls.Add(this.labelphone);
             this.Controls.Add(this.buttonInsert);
             this.Controls.Add(this.labelAdress);
             this.Controls.Add(this.labelCustID);
             this.Controls.Add(this.labelNama);
-            this.Controls.Add(this.dgvNama);
             this.Controls.Add(this.Random);
             this.Name = "RandomNama";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNama)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,12 +135,13 @@ namespace RandomNama
         #endregion
 
         private System.Windows.Forms.Button Random;
-        private System.Windows.Forms.DataGridView dgvNama;
         private System.Windows.Forms.Label labelNama;
         private System.Windows.Forms.Label labelCustID;
         private System.Windows.Forms.Label labelAdress;
         private System.Windows.Forms.Button buttonInsert;
         private System.Windows.Forms.Label labelphone;
+        private System.Windows.Forms.Button buttonLoop;
+        private System.Windows.Forms.TextBox textBoxUlangBrp;
     }
 }
 
