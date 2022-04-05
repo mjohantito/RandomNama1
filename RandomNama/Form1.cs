@@ -19,7 +19,7 @@ namespace RandomNama
         MySqlConnection sqlConnect;
         MySqlCommand sqlCommand;
         MySqlDataAdapter sqlAdapter;
-        string connectString = "server=139.255.11.84;uid=student;pwd=isbmantap;database=DW_TITO_OLTP1;";
+        string connectString = "server=139.255.11.84;uid=student;pwd=isbmantap;database=DW_TITO_OLTP3;";
         string sqlQuery;
 
         string[] NamaDepan = { "Yohan", "Cliffton", "Billy","Agustian", "Anthony", "Soenarto", "Jono", "Kasino", "Briaan", "Laura","Edbert", "Chyntia", "Fujian", "Ria", "Agus", "Bambang" };
